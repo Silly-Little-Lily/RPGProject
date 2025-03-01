@@ -32,4 +32,4 @@ class Species:
         self.Languages = Languages
 
 def Default():
-    return Species(1,"Species","Species",1,3,[1],[2],[3],[4],[5],11,"2d6+2",1,2,3,4,5,6,30.0,10.0,0.0,[1],2,[1])
+    return Species(1,"Species","Species",1,3,[1],12,[2],[3],[4],[5],11,"2d6+2",1,2,3,4,5,6,30.0,10.0,0.0,[1],2,[1])
