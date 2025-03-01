@@ -1,0 +1,6 @@
+Remember to credit every resource and task
+
+Github creation and management - Lizzy Reed
+File/folder organization - Lizzy Reed
+Game engine - Pygame
+Programming environment(s) - Visual Studio Code, Github

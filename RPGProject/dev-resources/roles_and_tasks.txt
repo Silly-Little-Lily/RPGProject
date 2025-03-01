@@ -1,0 +1,38 @@
+1. UI Design - high level
+2. UI Design - implementation
+3. Class Design - playable characters
+4. Worldbuilding - large-scale map design
+5. Sprite Design - characters
+6. Sprite Design - creatures
+7. Sprite Design - items
+8. Sprite Design - tiles
+9. Sprite Design - animation
+10. Mechanics Design - combat (responsive)
+11. Mechanics Design - combat (turn-based)
+12. Mechanics Design - pov, roles, and switching
+13. Class Design - creatures (characters sub -> playable characters sub)
+14. Level/Quest Design - [ this should come much later ]
+15. Mechanics Design - inventory
+16. World Generation - npc generation
+17. World Generation - static structure variables (npcs in a preset village, etc;)
+18. World Generation - continuous wilderness generation
+19. World Generation - variable structure generation (dungeons, castles, etc;)
+20. Worldbuilding - city and static structure design
+21. Worldbuilding - cultures (inspiration, clothing, names, etc;)
+22. Programming - game loop (direct event/input handling, clock management, movement, etc;)
+23. Player Tracking - history, events, achievements, etc;
+24. Rendering and Settings - fullscreen, resizing
+25. Mechanics Design - player qualities, skills, and stats
+26. Mechanics Design - player stat meters and well-being measurements
+27. UI Design - turn-based combat
+28. UI Design - responsive combat
+29. UI Design - conversation
+30. UI Design - open-world exploration
+31. Mechanics Design - conversation system
+32. Mechanics Design - character relationships and reputation system
+33. Mechanics Design - player classes and subclasses
+34. Mechanics Design - temporary player effects
+35. Sound Design - realistic/responsive (slashing, hitting, "oof", etc;)
+36. Sound Design - in-game background music and ambience
+37. Sound Design - themes for menus or scripted moments
+38. Mechanics Design - leveling and experience
