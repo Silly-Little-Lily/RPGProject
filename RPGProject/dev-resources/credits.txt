@@ -1,6 +1,8 @@
 Remember to credit every resource and task
 
-Github creation and management - Lizzy Reed
-File/folder organization - Lizzy Reed
+Github creation and management - Lizzy
+File/folder organization - Lizzy
 Game engine - Pygame
 Programming environment(s) - Visual Studio Code, Github
+Font (main) - Pokemon ? Font
+Class Design - Lizzy
