@@ -20,7 +20,7 @@ class Load:
         progress = 0
 
         width, height = screen.get_size()
-        background_art = pygame.transform.scale(pygame.image.load("images/load_bg.jpg"), (width, height))
+        background_art = pygame.transform.scale(pygame.image.load("images/loading_bg.jpg"), (width, height))
         background_rect = background_art.get_rect(topleft=(0,0))
   
     def run(self):
