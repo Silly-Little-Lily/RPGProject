@@ -4,6 +4,8 @@ import pygame
 import threading
 import time
 
+pygame.init()
+
 ## Loading Necessary Components ##
 WHITE, BLACK = (255, 255, 255), (0, 0, 0)
 loading = True
