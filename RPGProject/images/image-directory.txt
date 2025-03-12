@@ -1,3 +1,4 @@
-overworld_top_bar
-overworld_bottom_bar
-overworld_side_bar
+overworld_top_bar,64,1280
+overworld_bottom_bar,64,1280
+overworld_side_bar,820,64
+overworld_side_bar,820,192
