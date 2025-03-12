@@ -18,6 +18,7 @@ default_font = pygame.font.Font(None, 30)
 tiles = {}
 sprites = {}
 tile_categories = {}
+ui = {}
 
 class Load:
   
@@ -41,7 +42,7 @@ class Load:
             self.events()
             self.display(screen)
             pygame.display.flip()
-        loaded_game = game.Game(0,screen,tiles,tile_categories,sprites,"overworld")
+        loaded_game = game.Game(0,screen,tiles,tile_categories,sprites,"overworld",ui)
       
     def events(self):
         for ev in pygame.event.get():
@@ -66,7 +67,7 @@ class Load:
 
 
 def load_things():
-    global loading, progress, status, tiles, sprites, tile_categories
+    global loading, progress, status, tiles, sprites, tile_categories, ui
     ## Loading Tiles ##
 
     progress += 1
