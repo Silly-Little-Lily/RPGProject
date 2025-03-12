@@ -11,7 +11,7 @@ pygame.init()
 ## Loading Necessary Components ##
 WHITE, BLACK = (255, 255, 255), (0, 0, 0)
 loading = True
-bar_width, bar_height, margin, load_cap, x, y = 750, 50, 6, 3, 380, 800
+bar_width, bar_height, margin, load_cap, x, y = 750, 50, 6, 2, 380, 800
 loaded_height, status = int(bar_height-(2*margin)), "Loading tiles..."
 default_font = pygame.font.Font(None, 30)
 
@@ -69,13 +69,7 @@ class Load:
 
 def load_things():
     global loading, progress, status, tiles, sprites, tile_categories, ui
-    ## Loading Tiles ##
-
-    progress += 1
-  
-    status = "Loading sprites"
-    ## Loading Sprites ##
-
+    
     with open("RPGProject/images/base_tiles_directory.txt","r") as base_tile_file:
       base_tile_all_text = base_tile_file.readlines()
       for line in base_tile_all_text:
@@ -91,15 +85,16 @@ def load_things():
         tile_categories[id] = category
           
     progress += 1
+    status = "Loading UI components..."
+    with open("RPGProject/images/image-directory.txt","r") as file:
+      image_file_text = file.readlines()
+      for line in image_file_text:
+        parts = line.split(",")
+        name = parts[0]
+        key_name = parts[1]
+        ui[key_name] = pygame.transform.scale(f"RPGProject/images/{name}.jpg")
   
-    status = "Last details..."
-    ## Ending ##
-  
-    time.sleep(3)
     progress += 1
-  
-    status = "Finishing..."
-    print(f"Done! Ending progress: {progress}")
     loading = False
 
 if __name__ == "__main__":
