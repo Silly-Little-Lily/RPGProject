@@ -41,7 +41,7 @@ class Load:
             self.events()
             self.display(screen)
             pygame.display.flip()
-        loaded_game = game.Game(0,tiles,tile_categories,sprites)
+        loaded_game = game.Game(0,screen,tiles,tile_categories,sprites,"overworld")
       
     def events(self):
         for ev in pygame.event.get():
