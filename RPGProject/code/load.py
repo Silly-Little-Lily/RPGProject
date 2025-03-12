@@ -3,6 +3,7 @@
 import pygame
 import threading
 import time
+import sys
 
 pygame.init()
 
@@ -26,26 +27,28 @@ class Load:
         progress = 0
 
         width, height = screen.get_size()
-        background_art = pygame.transform.scale(pygame.image.load("images/loading_bg.jpg"), (width, height))
-        background_rect = background_art.get_rect(topleft=(0,0))
+        self.background_art = pygame.transform.scale(pygame.image.load("RPGProject/images/loading_bg.jpg"), (width, height))
+        self.background_rect = self.background_art.get_rect(topleft=(0,0))
   
     def run(self):
         if self.load_to == "startup":   # If "startup" is sent as a parameter, indcating game-launching loading
             loading_thread = threading.Thread(target=load_things)
             loading_thread.start()
         pygame.display.set_caption("RPG Game")
-        screen.blit(background_art, background_rect)
+        screen.blit(self.background_art, self.background_rect)
         while loading:
             self.events()
             self.display(screen)
             pygame.display.flip()
         pygame.quit()
-        return cc_assets
+        sys.exit()
+        return
       
     def events(self):
         for ev in pygame.event.get():
             if ev.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit()
               
     def display(self, screen):
         loaded_width = int(((progress/load_cap)*bar_width)-(2*margin))
@@ -72,7 +75,7 @@ def load_things():
     status = "Loading sprites"
     ## Loading Sprites ##
 
-    with open("images/base_tiles_directory.txt","r") as base_tile_file:
+    with open("RPGProject/images/base_tiles_directory.txt","r") as base_tile_file:
       base_tile_all_text = base_tile_file.readlines()
       for line in base_tile_all_text:
         parts = line.split(",")
@@ -82,7 +85,7 @@ def load_things():
         tiles[id] = []
         for i in range(animation_length):
           i += 1
-          img = pygame.image.load(f"{id}-{i}")
+          img = pygame.image.load(f"RPGProject/images/{id}-{i}.jpg")
           tiles[id].append(pygame.transform.scale(img,(64,64)))
         tile_categories[id] = category
           
