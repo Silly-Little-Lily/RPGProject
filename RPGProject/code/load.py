@@ -13,6 +13,10 @@ bar_width, bar_height, margin, load_cap, x, y = 750, 50, 6, 3, 380, 800
 loaded_height, status = int(bar_height-(2*margin)), "Loading tiles..."
 default_font = pygame.font.Font(None, 30)
 
+tiles = {}
+sprites = {}
+tile_categories = {}
+
 class Load:
   
     def __init__(self, load_to, screen):
@@ -60,16 +64,33 @@ class Load:
 
 
 def load_things():
-    global loading, progress, status, tiles, sprites
+    global loading, progress, status, tiles, sprites, tile_categories
     ## Loading Tiles ##
 
     progress += 1
+  
     status = "Loading sprites"
     ## Loading Sprites ##
-    
+
+    with open("images/base_tiles_directory.txt","r") as base_tile_file:
+      base_tile_all_text = base_tile_file.readlines()
+      for line in base_tile_all_text:
+        parts = line.split(",")
+        id = int(parts[0].strip())
+        animation_length = int(parts[1].strip())
+        category = int(parts[2].strip())
+        tiles[id] = []
+        for i in range(animation_length):
+          i += 1
+          img = pygame.image.load(f"{id}-{i}")
+          tiles[id].append(pygame.transform.scale(img,(64,64)))
+        tile_categories[id] = category
+          
     progress += 1
+  
     status = "Last details..."
     ## Ending ##
+  
     time.sleep(3)
     progress += 1
   
