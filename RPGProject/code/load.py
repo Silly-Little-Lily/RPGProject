@@ -4,6 +4,7 @@ import pygame
 import threading
 import time
 import sys
+import game
 
 pygame.init()
 
@@ -40,9 +41,7 @@ class Load:
             self.events()
             self.display(screen)
             pygame.display.flip()
-        pygame.quit()
-        sys.exit()
-        return
+        loaded_game = game.Game(0,tiles)
       
     def events(self):
         for ev in pygame.event.get():
