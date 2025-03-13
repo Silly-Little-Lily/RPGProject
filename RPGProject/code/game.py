@@ -29,3 +29,8 @@ class Game:
           pass
         elif event.type == pygame.KEYUP:
           pass
+
+  def blit_margins(self):
+    self.screen.blit(ui[u1],(0,0))
+    self.screen.blit(ui[u2],(0,820-64))
+    self.screen.blit(ui[u3],(1280-64,0))
