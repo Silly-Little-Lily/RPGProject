@@ -7,7 +7,7 @@ pygame.init()
 
 class Game:
 
-  def __init__(self,slot,screen,tiles,tile_categories,sprites,mode,ui):
+  def __init__(self,slot,screen,tiles,tile_categories,sprites,mode,ui,maps):
     self.mode = mode
     self.slot = slot
     self.screen = screen
@@ -15,6 +15,7 @@ class Game:
     self.tile_categories = tile_categories
     self.sprites = sprites
     self.ui = ui
+    self.maps = maps
 
   def run(self):
     running = True
