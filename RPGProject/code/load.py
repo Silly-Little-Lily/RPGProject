@@ -93,7 +93,8 @@ def load_things():
         name = parts[0]
         key_name = parts[1]
         height, width = int(parts[2]), int(parts[3])
-        ui[key_name] = pygame.transform.scale(f"RPGProject/images/{name}.jpg",(height,width))
+        img = pygame.image.load(f"RPGProject/images/{name}.jpg")
+        ui[key_name] = pygame.transform.scale(img,(height,width))
   
     progress += 1
     loading = False
