@@ -5,6 +5,7 @@ import threading
 import time
 import sys
 import game
+import party
 
 pygame.init()
 
@@ -51,7 +52,8 @@ class Load:
             pygame.display.flip()
           
         # Start the game once the loading is done
-        loaded_game = game.Game(0,screen,tiles,tile_categories,sprites,"overworld",ui, maps)
+        partyy = party.Default()
+        loaded_game = game.Game(0,screen,tiles,tile_categories,sprites,"overworld",ui, maps, partyy)
         loaded_game.run()
         
       
