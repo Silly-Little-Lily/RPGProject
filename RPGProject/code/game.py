@@ -11,7 +11,7 @@ class Game:
     self.slot = slot
     self.screen = screen
     self.tiles = tiles
-    self.tile_categories tile_categories
+    self.tile_categories = tile_categories
     self.sprites = sprites
     self.ui = ui
 
