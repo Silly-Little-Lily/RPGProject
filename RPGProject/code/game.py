@@ -8,6 +8,7 @@ pygame.init()
 class Game:
 
   def __init__(self,slot,screen,tiles,tile_categories,sprites,mode,ui):
+    self.mode = mode
     self.slot = slot
     self.screen = screen
     self.tiles = tiles
@@ -16,22 +17,25 @@ class Game:
     self.ui = ui
 
   def run(self):
-    if mode == "overworld":
-      # Blit the overworld contents
-      # Blit the margin contents
-      for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-          pygame.quit()
-          sys.exit()
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-          pass
-        elif event.type == pygame.MOUSEBUTTONUP:
-          pass
-        elif event.type == pygame.KEYUP:
-          pass
-      pygame.display.flip()
+    running = True
+    while running:
+      if self.mode == "overworld":
+        # Blit the overworld contents
+        # Blit the margin contents
+        self.blit_margins()
+        for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+          elif event.type == pygame.MOUSEBUTTONDOWN:
+            pass
+          elif event.type == pygame.MOUSEBUTTONUP:
+            pass
+          elif event.type == pygame.KEYUP:
+            pass
+        pygame.display.flip()
 
   def blit_margins(self):
-    self.screen.blit(ui[u1],(0,0))
-    self.screen.blit(ui[u2],(0,820-64))
-    self.screen.blit(ui[u3],(1280-64,0))
+    self.screen.blit(self.ui["u1"],(0,0))
+    self.screen.blit(self.ui["u2"],(0,820-64))
+    self.screen.blit(self.ui["u3"],(1280-64,0))

@@ -44,6 +44,7 @@ class Load:
             pygame.display.flip()
         loaded_game = game.Game(0,screen,tiles,tile_categories,sprites,"overworld",ui)
         loaded_game.run()
+        
       
     def events(self):
         for ev in pygame.event.get():
@@ -93,9 +94,11 @@ def load_things():
         name = parts[0]
         key_name = parts[1]
         height, width = int(parts[2]), int(parts[3])
+
         img = pygame.image.load(f"RPGProject/images/{name}.jpg")
         ui[key_name] = pygame.transform.scale(img,(height,width))
-  
+
+
     progress += 1
     loading = False
 
