@@ -11,14 +11,16 @@ pygame.init()
 ## Loading Necessary Components ##
 WHITE, BLACK = (255, 255, 255), (0, 0, 0)
 loading = True
-bar_width, bar_height, margin, load_cap, x, y = 750, 50, 6, 2, 380, 800
+bar_width, bar_height, margin, load_cap, x, y = 750, 50, 6, 3, 380, 800
 loaded_height, status = int(bar_height-(2*margin)), "Loading tiles..."
 default_font = pygame.font.Font(None, 30)
 
+# Initializing empty dictionaries
 tiles = {}
 sprites = {}
 tile_categories = {}
 ui = {}
+maps = {}
 
 class Load:
   
@@ -42,7 +44,7 @@ class Load:
             self.events()
             self.display(screen)
             pygame.display.flip()
-        loaded_game = game.Game(0,screen,tiles,tile_categories,sprites,"overworld",ui)
+        loaded_game = game.Game(0,screen,tiles,tile_categories,sprites,"overworld",ui, maps)
         loaded_game.run()
         
       
@@ -69,7 +71,7 @@ class Load:
 
 
 def load_things():
-    global loading, progress, status, tiles, sprites, tile_categories, ui
+    global loading, progress, status, tiles, sprites, tile_categories, ui, maps
     
     with open("RPGProject/images/base_tiles_directory.txt","r") as base_tile_file:
       base_tile_all_text = base_tile_file.readlines()
@@ -98,7 +100,15 @@ def load_things():
         img = pygame.image.load(f"RPGProject/images/{name}.jpg")
         ui[key_name] = pygame.transform.scale(img,(height,width))
 
+    progress += 1
 
+    status = "Loading maps..."
+    with open(RPGProject/save/static/maps/map_directory) as file:
+      map_file_text = file.readlines()
+      for line in map_file_text:
+        parts = line.split(",")
+        map_id = int(parts[1])
+        map_file_location = f"RPGProject/save/static/maps/{parts[0]}.txt"
     progress += 1
     loading = False
 
