@@ -20,9 +20,12 @@ class Game:
   def run(self):
     running = True
     while running:
+      # Check mode to see if we're rendering the map, a menu, or something else
       if self.mode == "overworld":
         # Blit the overworld contents
         self.blit_margins()
+        
+        # Event handling block
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
             pygame.quit()
@@ -33,6 +36,7 @@ class Game:
             pass
           elif event.type == pygame.KEYUP:
             pass
+            
         pygame.display.flip()
 
   def blit_margins(self):
