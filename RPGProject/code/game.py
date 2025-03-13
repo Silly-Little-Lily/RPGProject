@@ -21,7 +21,6 @@ class Game:
     while running:
       if self.mode == "overworld":
         # Blit the overworld contents
-        # Blit the margin contents
         self.blit_margins()
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
