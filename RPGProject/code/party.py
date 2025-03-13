@@ -4,12 +4,13 @@ import character
 
 class Party:
 
-  def __init__(self, members, allies, enemies, leader):
+  def __init__(self, id, members, allies, enemies, leader):
     self.Members = members
     self.Allies = allies
     self.Enemies = enemies
     self.Leader = leader
+    self.Id = Id
 
 def Default():
   cha = character.Default()
-  return Party([cha.Id],[],[],cha.Id)
+  return Party(1,[cha.Id],[],[],cha.Id)
