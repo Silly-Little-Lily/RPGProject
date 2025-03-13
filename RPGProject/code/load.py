@@ -30,20 +30,27 @@ class Load:
         self.screen = screen
         progress = 0
 
+        # Retrieving screen dimensions and blitting scaled background
         width, height = screen.get_size()
         self.background_art = pygame.transform.scale(pygame.image.load("RPGProject/images/loading_bg.jpg"), (width, height))
         self.background_rect = self.background_art.get_rect(topleft=(0,0))
   
     def run(self):
         if self.load_to == "startup":   # If "startup" is sent as a parameter, indcating game-launching loading
+            
+            # Set up the load_things function to run parallel
             loading_thread = threading.Thread(target=load_things)
             loading_thread.start()
+          
         pygame.display.set_caption("RPG Game")
         screen.blit(self.background_art, self.background_rect)
+      
         while loading:
             self.events()
             self.display(screen)
             pygame.display.flip()
+          
+        # Start the game once the loading is done
         loaded_game = game.Game(0,screen,tiles,tile_categories,sprites,"overworld",ui, maps)
         loaded_game.run()
         
@@ -110,6 +117,7 @@ def load_things():
         map_id = int(parts[1])
         map_file_location = f"RPGProject/save/static/maps/{parts[0]}.txt"
     progress += 1
+    time.sleep(1) # Looks cleaner when the screen has a moment to show 100% progress
     loading = False
 
 if __name__ == "__main__":
